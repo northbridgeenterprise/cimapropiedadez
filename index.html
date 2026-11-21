@@ -70,19 +70,35 @@
 <main>
 <section class="heroe" id="inicio" aria-label="Inicio">
   <div class="heroe-contenido envoltura">
+    <div class="heroe-texto">
     <div class="selector" role="tablist" aria-label="¿Qué necesitas?">
       <button role="tab" aria-selected="true" data-modo="compramos">Que compren mi casa</button>
       <button role="tab" aria-selected="false" data-modo="vender">Vender</button>
       <button role="tab" aria-selected="false" data-modo="comprar">Comprar</button>
     </div>
     <div class="panel-heroe" id="panel-heroe" aria-live="polite">
-      <h1 id="h-titulo">Compramos tu casa tal como está.</h1>
+      <h1 id="h-titulo">Compramos tu casa <em>tal como está.</em></h1>
       <p class="bajada" id="h-bajada">Con adeudo de Infonavit, gravamen, deudas o en mal estado. Te hacemos una oferta por escrito y nosotros nos encargamos de los trámites.</p>
       <div class="acciones">
         <a class="boton boton-ambar" id="h-cta" href="https://wa.me/528140079355?text=Hola%2C%20quiero%20que%20me%20hagan%20una%20oferta%20por%20mi%20casa." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg> <span id="h-cta-texto">Pide una oferta por WhatsApp</span></a>
         <a class="boton boton-linea" id="h-sec" href="#compramos">Ver qué casas compramos</a>
       </div>
     </div>
+    </div>
+    <aside class="oferta" aria-label="Lo que incluye cada oferta">
+      <div class="oferta-cabeza">
+        <div><b>Oferta de compra</b><small>Lo que incluye cada oferta</small></div>
+        <span class="sello">Por escrito</span>
+      </div>
+      <ul>
+        <li><span>Revisión de adeudos</span><b>Sin costo</b></li>
+        <li><span>Visita a tu casa</span><b>Sin costo</b></li>
+        <li><span>Liquidación de Infonavit</span><b>En la firma</b></li>
+        <li><span>Firma de la escritura</span><b>Ante notario</b></li>
+        <li><span>Tu pago</span><b>El mismo día</b></li>
+      </ul>
+      <div class="oferta-pie"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Nunca te pedimos dinero para revisar tu caso.</div>
+    </aside>
   </div>
 
   <div class="montanas" aria-hidden="true">
@@ -115,10 +131,18 @@
 
 <section class="caminos" id="servicios" aria-labelledby="t-caminos">
   <div class="envoltura">
+    <ul class="garantias" aria-label="Nuestras garantías">
+      <li><span class="ico-g"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg></span><div>Oferta por escrito<small>Con números claros</small></div></li>
+      <li><span class="ico-g"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 21 18 0M5 21V10l7-6 7 6v11M10 21v-6h4v6"/></svg></span><div>Revisión y visita<small>Sin costo para ti</small></div></li>
+      <li><span class="ico-g"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 15 -3.5 6 .5-4H5l3.5-6"/><circle cx="12" cy="8" r="6"/><path d="M9.5 8l1.8 1.8L15 6.5"/></svg></span><div>Firma ante notario<small>Legal y verificable</small></div></li>
+      <li><span class="ico-g"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="13" rx="2"/><circle cx="12" cy="12.5" r="2.5"/><path d="M6 10h.01M18 15h.01"/></svg></span><div>Pago el día de la firma<small>Sin comisión si compramos</small></div></li>
+    </ul>
+    <p class="ceja">Servicios</p>
     <h2 class="titulo-seccion" id="t-caminos">Tres formas de ayudarte con tu casa.</h2>
     <p class="intro">Ya sea que busques tu primera casa, quieras venderla bien o necesites salir de ella rápido, te decimos con claridad qué opción te conviene.</p>
     <div class="caminos-grid">
       <article class="camino destacado">
+        <span class="num-camino">01</span>
         <h3>Te compramos tu casa</h3>
         <p>Nosotros somos el comprador. Sin esperar a que aparezca alguien con crédito, sin arreglarla antes y sin enseñarla a desconocidos.</p>
         <ul>
@@ -126,9 +150,10 @@
           <li>Con gravamen, hipoteca o deudas de servicios</li>
           <li>Abandonadas o que necesitan reparaciones</li>
         </ul>
-        <a href="#compramos">Revisa si tu casa califica</a>
+        <a href="#compramos">Revisa si tu casa califica <span class="flecha" aria-hidden="true">→</span></a>
       </article>
       <article class="camino">
+        <span class="num-camino">02</span>
         <h3>Vende tu casa</h3>
         <p>La ofrecemos al precio correcto y filtramos a los interesados antes de que entren a tu casa.</p>
         <ul>
@@ -136,9 +161,10 @@
           <li>Fotos, publicación y visitas</li>
           <li>Trámite con notario y crédito del comprador</li>
         </ul>
-        <a href="#contacto" data-necesidad="Vender mi casa">Quiero vender</a>
+        <a href="#contacto" data-necesidad="Vender mi casa">Quiero vender <span class="flecha" aria-hidden="true">→</span></a>
       </article>
       <article class="camino">
+        <span class="num-camino">03</span>
         <h3>Compra tu casa</h3>
         <p>Te ayudamos a encontrar una casa que te alcance y a que los papeles estén en orden antes de firmar.</p>
         <ul>
@@ -146,7 +172,7 @@
           <li>Infonavit, Fovissste, banco o contado</li>
           <li>Revisión de escrituras y adeudos</li>
         </ul>
-        <a href="/propiedades">Ver casas en venta</a>
+        <a href="/propiedades">Ver casas en venta <span class="flecha" aria-hidden="true">→</span></a>
       </article>
     </div>
   </div>
@@ -155,7 +181,8 @@
 <section class="compramos" id="compramos" aria-labelledby="t-compramos">
   <div class="envoltura compramos-grid">
     <div>
-      <h2 class="titulo-seccion" id="t-compramos">¿Tu casa está en alguna de estas situaciones?</h2>
+      <p class="ceja">Revisa tu caso</p>
+    <h2 class="titulo-seccion" id="t-compramos">¿Tu casa está en alguna de estas situaciones?</h2>
       <p class="intro">Marca lo que aplica. Son las casas que los bancos y la mayoría de los compradores rechazan, y son justo las que nosotros compramos.</p>
       <div class="situaciones" id="situaciones">
         <div class="situacion"><input type="checkbox" id="s1" value="Tengo adeudo con Infonavit o ya no puedo pagar"><label for="s1"><span class="caja"><svg viewBox="0 0 16 16"><path d="M3 8.5 6.5 12 13 4.5" fill="none" stroke="#0E1A2B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Tengo adeudo con Infonavit o ya no puedo pagar</label></div>
@@ -195,6 +222,7 @@
 
 <section class="otras" aria-labelledby="t-guias">
   <div class="envoltura">
+    <p class="ceja">Guías por situación</p>
     <h2 class="titulo-seccion" id="t-guias">Cómo resolvemos cada situación.</h2>
     <p class="intro">Explicamos paso a paso qué pasa con tu casa según su caso, antes de que nos escribas.</p>
     <div class="otras-grid">
@@ -208,6 +236,7 @@
 
 <section class="proceso" id="proceso" aria-labelledby="t-proceso">
   <div class="envoltura">
+    <p class="ceja">Cómo funciona</p>
     <h2 class="titulo-seccion" id="t-proceso">Así compramos tu casa.</h2>
     <p class="intro">Cuatro pasos, y en cada uno sabes cuánto vas a recibir y qué sigue.</p>
     <ol class="pasos">
@@ -221,6 +250,7 @@
 
 <section class="casos" id="casos" aria-labelledby="t-casos" hidden>
   <div class="envoltura">
+    <p class="ceja">Casos reales</p>
     <h2 class="titulo-seccion" id="t-casos">Casas que ya compramos.</h2>
     <p class="intro">Casos reales de familias en el área metropolitana. Cambiamos los nombres por privacidad.</p>
     <div class="casos-grid" id="casos-grid"></div>
@@ -229,6 +259,7 @@
 
 <section class="confianza" id="confianza" aria-labelledby="t-confianza">
   <div class="envoltura">
+    <p class="ceja">Sin fraudes</p>
     <h2 class="titulo-seccion" id="t-confianza">Cómo saber que tratas con alguien serio.</h2>
     <p class="intro">Cuando tienes un adeudo o una casa difícil de vender, no faltan quienes quieren aprovecharse. Esto es lo que nosotros hacemos, y lo que nunca debes aceptar de nadie.</p>
     <div class="confianza-grid">
@@ -264,6 +295,7 @@
 
 <section class="zonas" aria-labelledby="t-zonas">
   <div class="envoltura">
+    <p class="ceja">Cobertura</p>
     <h2 class="titulo-seccion" id="t-zonas">Trabajamos en toda el área metropolitana.</h2>
     <ul class="lista-zonas">
       <li>Monterrey</li><li>Guadalupe</li><li>Apodaca</li><li>San Nicolás</li><li>Escobedo</li><li>Santa Catarina</li><li>San Pedro</li><li>Juárez</li><li>García</li><li>Pesquería</li><li>Santiago</li><li>Cadereyta</li>
@@ -274,6 +306,7 @@
 
 <section class="equipo" id="equipo" aria-labelledby="t-equipo" hidden>
   <div class="envoltura">
+    <p class="ceja">Equipo</p>
     <h2 class="titulo-seccion" id="t-equipo">Quién te va a atender.</h2>
     <p class="intro">Personas reales, en Monterrey, que dan la cara en cada operación.</p>
     <div class="equipo-grid" id="equipo-grid"></div>
@@ -283,7 +316,8 @@
 <section class="referidos" aria-labelledby="t-referidos">
   <div class="envoltura referidos-grid">
     <div>
-      <h2 class="titulo-seccion" id="t-referidos">¿Conoces a alguien que necesite vender su casa?</h2>
+      <p class="ceja">Referidos</p>
+    <h2 class="titulo-seccion" id="t-referidos">¿Conoces a alguien que necesite vender su casa?</h2>
       <p class="intro">Un familiar con adeudo de Infonavit, un vecino con una casa abandonada, una herencia que nadie ha podido vender. Mándale nuestro contacto o pásanos sus datos y lo buscamos con cuidado.</p>
       <p class="intro" id="referidos-comision" hidden></p>
     </div>
@@ -297,7 +331,8 @@
 <section class="preguntas" id="preguntas" aria-labelledby="t-preguntas">
   <div class="envoltura preguntas-grid">
     <div>
-      <h2 class="titulo-seccion" id="t-preguntas">Lo que más nos preguntan.</h2>
+      <p class="ceja">Preguntas frecuentes</p>
+    <h2 class="titulo-seccion" id="t-preguntas">Lo que más nos preguntan.</h2>
       <p class="intro">Si tu duda no está aquí, mándanos mensaje y te respondemos.</p>
     </div>
     <div>
@@ -336,7 +371,8 @@
 <section class="contacto" id="contacto" aria-labelledby="t-contacto">
   <div class="envoltura contacto-grid">
     <div>
-      <h2 class="titulo-seccion" id="t-contacto">Cuéntanos de tu casa.</h2>
+      <p class="ceja">Contacto</p>
+    <h2 class="titulo-seccion" id="t-contacto">Cuéntanos de tu casa.</h2>
       <p class="intro">Llena los datos y se abre WhatsApp con tu mensaje listo para enviar. También puedes llamarnos directo.</p>
       <div class="telefonos">
         <span class="etiqueta">WhatsApp y llamadas</span>
@@ -397,19 +433,19 @@
   /* --- selector del héroe --- */
   const modos = {
     compramos:{
-      titulo:"Compramos tu casa tal como está.",
+      titulo:"Compramos tu casa <em>tal como está.</em>",
       bajada:"Con adeudo de Infonavit, gravamen, deudas o en mal estado. Te hacemos una oferta por escrito y nosotros nos encargamos de los trámites.",
       cta:"Pide una oferta por WhatsApp", msg:"Hola, quiero que me hagan una oferta por mi casa.",
       sec:"Ver qué casas compramos", secHref:"#compramos"
     },
     vender:{
-      titulo:"Vende tu casa al precio correcto.",
+      titulo:"Vende tu casa <em>al precio correcto.</em>",
       bajada:"Te decimos cuánto vale con base en casas vendidas en tu zona, la promovemos y filtramos a los compradores antes de cada visita.",
       cta:"Pide tu opinión de valor", msg:"Hola, quiero vender mi casa y saber cuánto vale.",
       sec:"Cómo vendemos", secHref:"#servicios"
     },
     comprar:{
-      titulo:"Encuentra tu casa con los papeles en orden.",
+      titulo:"Encuentra tu casa <em>con los papeles en orden.</em>",
       bajada:"Te ayudamos a buscar según tu zona y presupuesto, y revisamos escrituras y adeudos antes de que firmes. Con Infonavit, banco o de contado.",
       cta:"Cuéntanos qué buscas", msg:"Hola, estoy buscando comprar una casa.",
       sec:"Ver casas en venta", secHref:"propiedades.html"
@@ -420,7 +456,7 @@
   const reducir = matchMedia('(prefers-reduced-motion: reduce)').matches;
   function aplicar(m){
     const d = modos[m];
-    document.getElementById('h-titulo').textContent = d.titulo;
+    document.getElementById('h-titulo').innerHTML = d.titulo;
     document.getElementById('h-bajada').textContent = d.bajada;
     document.getElementById('h-cta-texto').textContent = d.cta;
     document.getElementById('h-cta').href = wa(d.msg);
@@ -450,6 +486,7 @@
   const rt = document.getElementById('r-titulo'), rx = document.getElementById('r-texto'), rc = document.getElementById('r-cta');
   function actualizar(){
     const sel = checks.filter(c => c.checked).map(c => c.value);
+    if (cont.textContent != sel.length){ cont.classList.remove('salto'); void cont.offsetWidth; cont.classList.add('salto'); }
     cont.textContent = sel.length;
     if (!sel.length){
       rt.textContent = "Marca lo que aplica a tu casa.";

@@ -144,3 +144,78 @@
     pintar();
   }
 })();
+
+/* ---------- experiencia: navegación, menú móvil, barra inferior y animaciones ---------- */
+(function () {
+  const D = window.CIMA || {};
+  const tel = "+" + (D.whatsapp || "528140079355");
+  const wa = "https://wa.me/" + (D.whatsapp || "528140079355");
+  const nav = document.querySelector(".nav");
+  const reducir = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // Navegación con fondo al bajar
+  const barra = document.createElement("div");
+  barra.className = "barra-movil";
+  barra.innerHTML = `<a class="wa" href="${wa}" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg> WhatsApp</a><a class="tel" href="tel:${tel}"><svg><use href="#i-tel"/></svg> Llamar</a>`;
+  document.body.appendChild(barra);
+  const alBajar = () => {
+    const y = scrollY;
+    if (nav && !nav.classList.contains("solida")) nav.classList.toggle("con-fondo", y > 40);
+    barra.classList.toggle("visible", y > 320 || !!document.querySelector(".nav.solida"));
+  };
+  addEventListener("scroll", alBajar, { passive: true });
+  alBajar();
+
+  // Menú móvil
+  const enlaces = nav && nav.querySelector("nav ul");
+  if (nav && enlaces) {
+    const boton = document.createElement("button");
+    boton.className = "menu-boton";
+    boton.setAttribute("aria-label", "Abrir menú");
+    boton.setAttribute("aria-expanded", "false");
+    boton.innerHTML = "<span></span>";
+    nav.querySelector(".envoltura").appendChild(boton);
+    const cajon = document.createElement("div");
+    cajon.className = "cajon";
+    cajon.id = "menu-movil";
+    cajon.setAttribute("aria-hidden", "true");
+    cajon.innerHTML = `<ul>${enlaces.innerHTML}</ul>
+      <div class="pie-cajon">
+        <a class="boton boton-ambar" href="${wa}" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg> Escríbenos por WhatsApp</a>
+        <a class="boton boton-linea" href="tel:${tel}"><svg><use href="#i-tel"/></svg> Llamar al 81 4007 9355</a>
+        <small>Urgencias: 81 2198 0008</small>
+      </div>`;
+    boton.setAttribute("aria-controls", "menu-movil");
+    document.body.appendChild(cajon);
+    const alternar = (abrir) => {
+      cajon.classList.toggle("abierto", abrir);
+      document.body.classList.toggle("menu-abierto", abrir);
+      boton.setAttribute("aria-expanded", abrir);
+      boton.setAttribute("aria-label", abrir ? "Cerrar menú" : "Abrir menú");
+      cajon.setAttribute("aria-hidden", !abrir);
+      nav.classList.toggle("con-fondo", abrir || scrollY > 40);
+    };
+    boton.addEventListener("click", () => alternar(!cajon.classList.contains("abierto")));
+    cajon.addEventListener("click", (e) => { if (e.target.closest("a")) alternar(false); });
+    addEventListener("keydown", (e) => { if (e.key === "Escape") alternar(false); });
+  }
+
+  // Aparición al hacer scroll
+  if (reducir || !("IntersectionObserver" in window)) return;
+  const sel = ".titulo-seccion,.ceja,.intro,.garantias,.camino,.paso,.tarjeta,.caso,.persona,.otras-grid a,.lista-zonas,.preguntas details,.texto-largo .cuerpo,.propiedad,.situaciones,.respuesta,.contacto form,.cifra";
+  const io = new IntersectionObserver((entradas) => {
+    entradas.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("visible"); io.unobserve(e.target); } });
+  }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+  const observar = () => document.querySelectorAll(sel).forEach((el) => {
+    if (el.classList.contains("revelar") || el.closest(".heroe-sub")) return;
+    const r = el.getBoundingClientRect();
+    if (r.top < innerHeight * 0.92) return; // ya visible: no lo escondemos
+    const hermanos = [...el.parentElement.children].filter((x) => x.matches(sel));
+    el.style.transitionDelay = Math.min(hermanos.indexOf(el), 5) * 70 + "ms";
+    el.classList.add("revelar");
+    io.observe(el);
+  });
+  observar();
+  // Por si el catálogo o los casos se pintan después
+  setTimeout(observar, 300);
+})();
