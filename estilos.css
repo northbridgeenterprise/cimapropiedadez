@@ -206,3 +206,39 @@ footer .marca svg{width:1.8rem;height:1.8rem}
 .cierre .acciones{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
 footer nav{display:flex;flex-wrap:wrap;gap:.4rem 1.2rem;width:100%;order:5;font-size:.88rem}
 footer nav a{text-underline-offset:4px}
+
+/* ---------- confianza / contra fraudes ---------- */
+.confianza{background:var(--blanco);border-top:1px solid var(--bruma)}
+.confianza-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);margin-top:3rem}
+.tarjeta{border-radius:24px;padding:clamp(1.6rem,3vw,2.4rem);display:grid;gap:1.1rem;align-content:start}
+.tarjeta h3{font-size:1.6rem}
+.tarjeta ul{list-style:none;margin:0;padding:0;display:grid;gap:.9rem}
+.tarjeta li{display:grid;grid-template-columns:1.6rem 1fr;gap:.8rem;align-items:start}
+.tarjeta li b{display:block;color:var(--tinta)}
+.tarjeta li span{color:var(--sierra);font-size:1rem}
+.tarjeta .ico{width:1.6rem;height:1.6rem;border-radius:50%;display:grid;place-items:center;margin-top:.1rem}
+.tarjeta .ico svg{width:.9rem}
+.compromisos{background:var(--niebla)}
+.compromisos .ico{background:var(--ambar)}
+.alertas{background:#FFF6E8;border:1px solid #F5D9A8}
+.alertas .ico{background:var(--tinta);color:var(--miel);font:800 .9rem/1 var(--display)}
+.confianza .pie-nota{margin-top:2rem;color:var(--sierra);max-width:70ch}
+@media (max-width:900px){.confianza-grid{grid-template-columns:1fr}}
+
+/* evaluación rápida */
+.evaluacion{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.4rem}
+.evaluacion .campo label{color:rgba(255,255,255,.85)}
+@media (max-width:520px){.evaluacion{grid-template-columns:1fr}}
+
+/* teléfonos */
+.telefonos{display:grid;gap:.2rem;margin-top:2.4rem}
+.telefonos .telefono{margin-top:0}
+.telefonos .etiqueta{font-size:.9rem;color:rgba(255,255,255,.6);margin-top:.8rem}
+.telefono.chico{font-size:clamp(1.8rem,3.6vw,2.8rem);color:var(--blanco)}
+
+/* legal */
+.legal{background:var(--blanco)}
+.legal .cuerpo{max-width:72ch;display:grid;gap:1rem;color:var(--sierra)}
+.legal h2{font-size:1.5rem;color:var(--tinta);margin-top:1.6rem;letter-spacing:-.01em}
+.legal ul{margin:0;padding-left:1.2rem;display:grid;gap:.4rem}
+.aviso a{color:inherit;text-underline-offset:3px}

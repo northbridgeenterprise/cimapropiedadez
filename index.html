@@ -4,12 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cima Propiedades | Compra, vende o te compramos tu casa en Monterrey</title>
-<meta name="description" content="Inmobiliaria en Monterrey, Nuevo León. Te ayudamos a comprar o vender tu casa, y compramos casas con adeudo de Infonavit, gravamen, deudas o en mal estado. Escríbenos al 81 2198 0008.">
+<meta name="description" content="Inmobiliaria en Monterrey, Nuevo León. Te ayudamos a comprar o vender tu casa, y compramos casas con adeudo de Infonavit, gravamen, deudas o en mal estado. Escríbenos por WhatsApp o llama al 81 4007 9355.">
 <meta property="og:title" content="Cima Propiedades · Monterrey">
 <meta property="og:description" content="Compra, vende o deja que compremos tu casa, aunque tenga adeudos o esté en mal estado.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_MX">
 <meta name="theme-color" content="#14273B">
+<meta property="og:image" content="og-imagen.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="apple-touch-icon" href="icono-180.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2314273B'/%3E%3Cpath d='M8 48 L24 18 L32 32 L38 24 L56 48 Z' fill='%23F2A93B'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +22,9 @@
   "@context": "https://schema.org",
   "@type": "RealEstateAgent",
   "name": "Cima Propiedades",
-  "telephone": "+52 81 2198 0008",
+  "telephone": ["+52 81 4007 9355", "+52 81 2198 0008"],
+  "priceRange": "Revisión y visita sin costo",
+  "knowsLanguage": "es-MX",
   "areaServed": "Área metropolitana de Monterrey, Nuevo León",
   "address": {"@type": "PostalAddress", "addressLocality": "Monterrey", "addressRegion": "Nuevo León", "addressCountry": "MX"}
 }
@@ -47,10 +52,11 @@
         <li><a href="#compramos">Compramos tu casa</a></li>
         <li><a href="#servicios">Vender y comprar</a></li>
         <li><a href="#proceso">Cómo funciona</a></li>
+        <li><a href="#confianza">Sin fraudes</a></li>
         <li><a href="#preguntas">Preguntas</a></li>
       </ul>
     </nav>
-    <a class="boton boton-ambar" href="https://wa.me/528121980008" target="_blank" rel="noopener">
+    <a class="boton boton-ambar" href="https://wa.me/528140079355" target="_blank" rel="noopener">
       <svg><use href="#i-wa"/></svg> WhatsApp
     </a>
   </div>
@@ -68,7 +74,7 @@
       <h1 id="h-titulo">Compramos tu casa tal como está.</h1>
       <p class="bajada" id="h-bajada">Con adeudo de Infonavit, gravamen, deudas o en mal estado. Te hacemos una oferta por escrito y nosotros nos encargamos de los trámites.</p>
       <div class="acciones">
-        <a class="boton boton-ambar" id="h-cta" href="https://wa.me/528121980008?text=Hola%2C%20quiero%20que%20me%20hagan%20una%20oferta%20por%20mi%20casa." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg> <span id="h-cta-texto">Pide una oferta por WhatsApp</span></a>
+        <a class="boton boton-ambar" id="h-cta" href="https://wa.me/528140079355?text=Hola%2C%20quiero%20que%20me%20hagan%20una%20oferta%20por%20mi%20casa." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg> <span id="h-cta-texto">Pide una oferta por WhatsApp</span></a>
         <a class="boton boton-linea" id="h-sec" href="#compramos">Ver qué casas compramos</a>
       </div>
     </div>
@@ -154,12 +160,30 @@
         <div class="situacion"><input type="checkbox" id="s5" value="Es una herencia y faltan papeles"><label for="s5"><span class="caja"><svg viewBox="0 0 16 16"><path d="M3 8.5 6.5 12 13 4.5" fill="none" stroke="#0E1A2B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Es una herencia y faltan papeles</label></div>
         <div class="situacion"><input type="checkbox" id="s6" value="Me urge vender y no puedo esperar"><label for="s6"><span class="caja"><svg viewBox="0 0 16 16"><path d="M3 8.5 6.5 12 13 4.5" fill="none" stroke="#0E1A2B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Me urge vender y no puedo esperar</label></div>
       </div>
+      <div class="evaluacion">
+        <div class="campo"><label for="e-municipio">¿En qué municipio está?</label>
+          <select id="e-municipio">
+            <option value="">Elige uno</option>
+            <option>Monterrey</option><option>Guadalupe</option><option>Apodaca</option><option>San Nicolás</option><option>Escobedo</option><option>Santa Catarina</option><option>San Pedro</option><option>Juárez</option><option>García</option><option>Pesquería</option><option>Santiago</option><option>Cadereyta</option><option>Otro municipio de N.L.</option>
+          </select>
+        </div>
+        <div class="campo"><label for="e-adeudo">¿Cuánto debes, más o menos?</label>
+          <select id="e-adeudo">
+            <option value="">No sé o prefiero no decir</option>
+            <option>Nada, no tiene adeudos</option>
+            <option>Menos de $100,000</option>
+            <option>Entre $100,000 y $300,000</option>
+            <option>Entre $300,000 y $600,000</option>
+            <option>Más de $600,000</option>
+          </select>
+        </div>
+      </div>
     </div>
     <aside class="respuesta" aria-live="polite">
       <div class="contador" id="contador">0</div>
       <p class="grande" id="r-titulo">Marca lo que aplica a tu casa.</p>
       <p id="r-texto">Con eso sabremos por dónde empezar cuando nos escribas. No necesitas tener todos los papeles a la mano.</p>
-      <a class="boton boton-ambar" id="r-cta" href="https://wa.me/528121980008" target="_blank" rel="noopener" aria-disabled="true"><svg><use href="#i-wa"/></svg> Enviar por WhatsApp</a>
+      <a class="boton boton-ambar" id="r-cta" href="https://wa.me/528140079355" target="_blank" rel="noopener" aria-disabled="true"><svg><use href="#i-wa"/></svg> Enviar por WhatsApp</a>
     </aside>
   </div>
 </section>
@@ -187,6 +211,36 @@
       <li class="paso"><span class="num">3</span><h3>Te hacemos una oferta</h3><p>Por escrito y con números claros: cuánto recibes y qué adeudos se cubren con la venta.</p></li>
       <li class="paso"><span class="num">4</span><h3>Firmas ante notario</h3><p>Se liquida lo que se debe y recibes tu dinero el día de la firma.</p></li>
     </ol>
+  </div>
+</section>
+
+<section class="confianza" id="confianza" aria-labelledby="t-confianza">
+  <div class="envoltura">
+    <h2 class="titulo-seccion" id="t-confianza">Cómo saber que tratas con alguien serio.</h2>
+    <p class="intro">Cuando tienes un adeudo o una casa difícil de vender, no faltan quienes quieren aprovecharse. Esto es lo que nosotros hacemos, y lo que nunca debes aceptar de nadie.</p>
+    <div class="confianza-grid">
+      <div class="tarjeta compromisos">
+        <h3>Lo que hacemos siempre</h3>
+        <ul>
+          <li><span class="ico"><svg viewBox="0 0 16 16"><path d="M3 8.5 6.5 12 13 4.5" fill="none" stroke="#0E1A2B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>La revisión y la visita no tienen costo</b><span>Saber si podemos comprar tu casa no te cuesta nada.</span></div></li>
+          <li><span class="ico"><svg viewBox="0 0 16 16"><path d="M3 8.5 6.5 12 13 4.5" fill="none" stroke="#0E1A2B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>La oferta te la damos por escrito</b><span>Con cuánto recibes y qué adeudos se liquidan. Puedes revisarla con calma o con quien tú quieras.</span></div></li>
+          <li><span class="ico"><svg viewBox="0 0 16 16"><path d="M3 8.5 6.5 12 13 4.5" fill="none" stroke="#0E1A2B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Todo se firma ante notario público</b><span>El notario verifica la identidad de las partes, los papeles de la casa y que la operación sea legal.</span></div></li>
+          <li><span class="ico"><svg viewBox="0 0 16 16"><path d="M3 8.5 6.5 12 13 4.5" fill="none" stroke="#0E1A2B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Recibes tu dinero el día de la firma</b><span>No entregas la casa a cambio de una promesa de pago.</span></div></li>
+          <li><span class="ico"><svg viewBox="0 0 16 16"><path d="M3 8.5 6.5 12 13 4.5" fill="none" stroke="#0E1A2B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Sin comisión cuando nosotros compramos</b><span>La cantidad de la oferta es la que recibes.</span></div></li>
+        </ul>
+      </div>
+      <div class="tarjeta alertas">
+        <h3>Señales de fraude, con quien sea</h3>
+        <ul>
+          <li><span class="ico">!</span><div><b>Te piden dinero para “apartar” o “gestionar”</b><span>Un comprador serio no te cobra por comprarte la casa.</span></div></li>
+          <li><span class="ico">!</span><div><b>Te ofrecen “borrar” tu deuda de Infonavit a cambio de un pago</b><span>Los trámites ante Infonavit son gratuitos y la deuda solo se liquida pagándola.</span></div></li>
+          <li><span class="ico">!</span><div><b>Quieren que firmes una carta poder o un contrato privado</b><span>La venta de una casa se formaliza en escritura ante notario.</span></div></li>
+          <li><span class="ico">!</span><div><b>Te presionan para decidir hoy mismo</b><span>Una oferta real se sostiene aunque te tomes unos días para revisarla.</span></div></li>
+          <li><span class="ico">!</span><div><b>Te piden entregar las llaves antes de la firma</b><span>La casa se entrega cuando ya firmaste y recibiste tu pago.</span></div></li>
+        </ul>
+      </div>
+    </div>
+    <p class="pie-nota">Antes de firmar con cualquier persona, pide la oferta por escrito y el nombre de la notaría, y llama tú mismo a la notaría para confirmar la cita.</p>
   </div>
 </section>
 
@@ -228,6 +282,10 @@
         <p>No hay comisión cuando nosotros somos los compradores. La cantidad que aparece en la oferta es la que recibes.</p>
       </details>
       <details>
+        <summary>¿Les tengo que pagar algo para empezar?</summary>
+        <p>No. La revisión, la visita y la oferta no tienen costo, y no hay comisión cuando nosotros compramos la casa.</p>
+      </details>
+      <details>
         <summary>¿Qué documentos necesito para empezar?</summary>
         <p>Con tu identificación y lo que tengas de la casa (escrituras, recibos o tu número de crédito Infonavit) podemos empezar. Si falta algo, te decimos cómo conseguirlo.</p>
       </details>
@@ -240,10 +298,15 @@
     <div>
       <h2 class="titulo-seccion" id="t-contacto">Cuéntanos de tu casa.</h2>
       <p class="intro">Llena los datos y se abre WhatsApp con tu mensaje listo para enviar. También puedes llamarnos directo.</p>
-      <a class="telefono" href="tel:+528121980008">81 2198 0008</a>
+      <div class="telefonos">
+        <span class="etiqueta">WhatsApp y llamadas</span>
+        <a class="telefono" href="tel:+528140079355">81 4007 9355</a>
+        <span class="etiqueta">Línea alterna para urgencias (WhatsApp y llamadas)</span>
+        <a class="telefono chico" href="tel:+528121980008">81 2198 0008</a>
+      </div>
       <div class="acciones">
-        <a class="boton boton-ambar" href="https://wa.me/528121980008" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg> Abrir WhatsApp</a>
-        <a class="boton boton-linea" href="tel:+528121980008"><svg><use href="#i-tel"/></svg> Llamar</a>
+        <a class="boton boton-ambar" href="https://wa.me/528140079355" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg> Abrir WhatsApp</a>
+        <a class="boton boton-linea" href="tel:+528140079355"><svg><use href="#i-tel"/></svg> Llamar</a>
       </div>
     </div>
     <form id="formulario" novalidate>
@@ -267,8 +330,8 @@
       </div>
       <div class="campo"><label for="f-mensaje">Cuéntanos un poco</label><textarea id="f-mensaje" placeholder="Ej. Casa de 2 recámaras en Apodaca, debo 4 meses de Infonavit."></textarea></div>
       <p class="error" id="f-error" role="alert"></p>
-      <a class="boton boton-ambar" id="f-enviar" href="https://wa.me/528121980008" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg> Enviar por WhatsApp</a>
-      <p class="aviso">Tus datos solo se usan para responderte.</p>
+      <a class="boton boton-ambar" id="f-enviar" href="https://wa.me/528140079355" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg> Enviar por WhatsApp</a>
+      <p class="aviso">Tus datos solo se usan para responderte. Consulta nuestro <a href="aviso-de-privacidad.html">aviso de privacidad</a>.</p>
     </form>
   </div>
   <svg class="silueta" viewBox="0 0 1440 180" preserveAspectRatio="none" aria-hidden="true"><path fill="#1C3046" d="M0 150 L260 128 L380 100 L470 60 L530 20 L566 0 L606 20 L690 64 L790 72 L880 30 L925 18 L968 14 L1040 60 L1200 110 L1440 130 L1440 180 L0 180 Z"/></svg>
@@ -278,17 +341,17 @@
 <footer>
   <div class="envoltura">
     <a class="marca" href="#inicio"><svg style="color:var(--ambar)"><use href="#i-cima"/></svg>Cima Propiedades</a>
-    <span>Monterrey, Nuevo León</span><a href="tel:+528121980008">81 2198 0008</a>
+    <span>Monterrey, Nuevo León</span><a href="tel:+528140079355">81 4007 9355</a><a href="tel:+528121980008">81 2198 0008 (urgencias)</a><a href="aviso-de-privacidad.html">Aviso de privacidad</a>
     <span>© 2026 Cima Propiedades</span>
     <nav aria-label="Situaciones"><a href="vender-casa-con-adeudo-infonavit-monterrey.html">Casa con adeudo de Infonavit</a><a href="vender-casa-intestada-herencia-monterrey.html">Casa heredada o intestada</a><a href="vender-casa-con-gravamen-monterrey.html">Casa con gravamen o hipoteca</a><a href="vender-casa-en-mal-estado-monterrey.html">Casa en mal estado o abandonada</a></nav>
   </div>
 </footer>
 
-<a class="flotante" href="https://wa.me/528121980008" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp"><svg><use href="#i-wa"/></svg></a>
+<a class="flotante" href="https://wa.me/528140079355" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp"><svg><use href="#i-wa"/></svg></a>
 
 <script>
 (function(){
-  const WA = "https://wa.me/528121980008";
+  const WA = "https://wa.me/528140079355";
   const wa = t => WA + "?text=" + encodeURIComponent(t);
 
   /* --- selector del héroe --- */
@@ -331,6 +394,16 @@
     setTimeout(() => { aplicar(b.dataset.modo); panel.classList.remove('cambiando'); }, 220);
   }));
 
+  tabs.forEach((b,i) => {
+    b.tabIndex = b.getAttribute('aria-selected') === 'true' ? 0 : -1;
+    b.addEventListener('keydown', e => {
+      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+      const n = tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length];
+      n.focus(); n.click();
+    });
+    b.addEventListener('click', () => tabs.forEach(x => x.tabIndex = x === b ? 0 : -1));
+  });
+
   /* --- situaciones --- */
   const checks = [...document.querySelectorAll('#situaciones input')];
   const cont = document.getElementById('contador');
@@ -343,12 +416,16 @@
       rx.textContent = "Con eso sabremos por dónde empezar cuando nos escribas. No necesitas tener todos los papeles a la mano.";
       rc.setAttribute('aria-disabled','true'); rc.href = WA; return;
     }
+    const mun = document.getElementById('e-municipio').value, ade = document.getElementById('e-adeudo').value;
     rt.textContent = sel.length === 1 ? "Sí compramos casas así." : "Sí, incluso con " + sel.length + " situaciones a la vez.";
-    rx.textContent = "Mándanos tu caso por WhatsApp. Ya va escrito lo que marcaste; solo agrega en qué colonia está la casa.";
+    rx.textContent = "Mándanos tu caso por WhatsApp. Ya va escrito lo que marcaste" + (mun ? "" : "; agrega en qué municipio y colonia está la casa") + ".";
     rc.removeAttribute('aria-disabled');
-    rc.href = wa("Hola, quiero vender mi casa. Su situación:\n- " + sel.join("\n- ") + "\nLa casa está en: ");
+    rc.href = wa("Hola, quiero vender mi casa. Su situación:\n- " + sel.join("\n- ") +
+      (ade ? "\nAdeudo aproximado: " + ade : "") +
+      "\nLa casa está en: " + (mun ? mun + ", colonia " : ""));
   }
   checks.forEach(c => c.addEventListener('change', actualizar));
+  ['e-municipio','e-adeudo'].forEach(id => document.getElementById(id).addEventListener('change', actualizar));
 
   /* --- enlaces que preseleccionan necesidad --- */
   document.querySelectorAll('[data-necesidad]').forEach(a => a.addEventListener('click', () => {
