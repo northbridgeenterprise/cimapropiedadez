@@ -127,7 +127,7 @@
     document.querySelectorAll("[data-a-msg]").forEach((e) => (e.href = waA(e.dataset.aMsg)));
     if (A.foto) {
       const img = $("#a-foto");
-      img.onload = () => { img.hidden = false; $("#a-monograma").hidden = true; };
+      img.onload = () => { img.hidden = false; $("#a-monograma").hidden = true; const c = document.querySelector(".cerro-retrato"); if (c) c.remove(); };
       img.src = A.foto;
     }
     if (A.bio) $("#a-bio").textContent = A.bio;
@@ -212,7 +212,7 @@
     pastilla.className = "pastilla";
     pastilla.setAttribute("role", "complementary");
     pastilla.setAttribute("aria-label", "Contactar a " + A.nombre);
-    pastilla.innerHTML = `<span class="avatar">${esc(iniciales)}${A.foto ? `<img src="${esc(A.foto)}" alt="" onerror="this.remove()">` : ""}</span>
+    pastilla.innerHTML = `<span class="avatar">${esc(iniciales)}${(A.avatar || A.foto) ? `<img src="${esc(A.avatar || A.foto)}" alt="" onerror="this.remove()">` : ""}</span>
       <div><b>${esc(A.nombre)}</b><small>${esc(A.puesto || "Asesor inmobiliario")} · Cima Propiedades</small></div>
       <a class="boton boton-wa" href="${waA(saludo)}" target="_blank" rel="noopener">${ICONO_WA} WhatsApp</a>
       <a class="boton boton-tel" href="tel:+${telA}" aria-label="Llamar a ${esc(A.nombre)}"><svg><use href="#i-tel"/></svg></a>`;

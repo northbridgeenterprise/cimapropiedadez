@@ -674,3 +674,5 @@ body[data-asesor] .flotante{display:none}
   .opciones.dias button{min-width:0}
   .agenda-resumen .boton{width:100%;justify-content:center}
 }
+.retrato .marco img,.persona img{object-position:center 30%}
+.retrato .marco img,.persona img{object-position:center 20%}

@@ -62,7 +62,7 @@ window.CIMA = {
   /* ---------- Equipo ---------- */
   // Ejemplo: { nombre: "Ana López", puesto: "Directora", foto: "fotos/ana.jpg", texto: "Atiende personalmente cada caso de Infonavit." }
   equipo: [
-    { nombre: "Alejandro Luna", puesto: "Asesor inmobiliario", foto: "fotos/alejandro-luna.jpg", perfil: "/alejandro-luna" }
+    { nombre: "Alejandro Luna", puesto: "Asesor inmobiliario", foto: "fotos/alejandro-luna.webp", perfil: "/alejandro-luna" }
   ],
 
   /* ---------- Referidos ---------- */
@@ -76,7 +76,8 @@ window.CIMA = {
     "alejandro-luna": {
       nombre: "Alejandro Luna",
       puesto: "Asesor inmobiliario",
-      foto: "fotos/alejandro-luna.jpg", // si el archivo no existe, se muestra el monograma "AL"
+      foto: "fotos/alejandro-luna.webp",          // vertical 4:5; si no existe, se muestra "AL"
+      avatar: "fotos/alejandro-luna-avatar.webp", // cuadrada, cara centrada (barra fija)
       whatsapp: "528140079355", // su WhatsApp (por ahora, el principal)
       telefono: "528140079355",
       correo: "",               // ej. "alejandro@cimapropiedades.com"
