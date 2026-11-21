@@ -62,12 +62,41 @@ window.CIMA = {
   /* ---------- Equipo ---------- */
   // Ejemplo: { nombre: "Ana López", puesto: "Directora", foto: "fotos/ana.jpg", texto: "Atiende personalmente cada caso de Infonavit." }
   equipo: [
+    { nombre: "Alejandro Luna", puesto: "Asesor inmobiliario", foto: "", perfil: "/alejandro-luna" }
   ],
 
   /* ---------- Referidos ---------- */
   // Si das una comisión por recomendar, descríbela aquí. Si no, déjalo vacío.
   // Ej. "Si la venta se concreta, te damos una comisión por recomendarnos."
   comisionReferidos: "Si tu recomendación termina en una venta, te damos una comisión. El monto depende de cada caso y te lo decimos antes de empezar.",
+
+  /* ---------- Asesores (cada uno tiene su página de perfil) ---------- */
+  // La página de Alejandro es /alejandro-luna. Lo que dejes vacío no se muestra.
+  asesores: {
+    "alejandro-luna": {
+      nombre: "Alejandro Luna",
+      puesto: "Asesor inmobiliario",
+      foto: "",                 // ej. "fotos/alejandro-luna.jpg" (vertical, 4:5)
+      whatsapp: "528140079355", // su WhatsApp (por ahora, el principal)
+      telefono: "528140079355",
+      correo: "",               // ej. "alejandro@cimapropiedades.com"
+      horario: "",              // ej. "Lunes a sábado, 9:00 a 19:00"
+      // Su historia en 2 o 3 frases, en primera persona. Si se deja vacío, se usa un texto general.
+      bio: "",
+      // Cifras reales, ej. { numero: "6", texto: "años de experiencia" }
+      cifras: [],
+      // ej. ["Casas con adeudo de Infonavit", "Herencias e intestados", "Venta con crédito"]
+      especialidades: [],
+      // ej. ["Apodaca", "Escobedo", "San Nicolás"]
+      zonas: [],
+      // ej. ["Certificación AMPI", "Curso de valuación"]
+      certificaciones: [],
+      // Testimonios reales de sus clientes:
+      // { nombre: "María G.", municipio: "Apodaca", texto: "...", estrellas: 5 }
+      testimonios: [],
+      redes: { facebook: "", instagram: "", tiktok: "" }
+    }
+  },
 
   /* ---------- Casas en venta ---------- */
   // Ejemplo:
@@ -81,7 +110,8 @@ window.CIMA = {
   //   m2: 120,                       // metros de construcción
   //   credito: ["Infonavit", "Bancario", "Contado"],
   //   fotos: ["fotos/casa1-1.jpg", "fotos/casa1-2.jpg"],
-  //   estado: "Disponible"           // "Disponible", "Apartada" o "Vendida"
+  //   estado: "Disponible",          // "Disponible", "Apartada" o "Vendida"
+  //   asesor: "alejandro-luna"       // aparece también en su perfil
   // },
   propiedades: [
   ]
