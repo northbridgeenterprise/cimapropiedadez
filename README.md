@@ -18,7 +18,8 @@ Todo lo que cambia con el tiempo vive en **`datos.js`**: casas en venta, casos r
 | `datos.js` | **Lo único que necesitas editar** |
 | `sitio.js` | Pinta las secciones a partir de `datos.js` y mide los clics de contacto |
 | `estilos.css` | Estilos compartidos |
-| `og-imagen.png`, `icono-180.png` | Imagen al compartir el enlace e ícono del celular |
+| `sitemap.xml`, `robots.txt`, `_headers` | Para Google y para Cloudflare Pages |
+| `favicon.svg`, `og-imagen.png`, `icono-180.png` | Imagen al compartir el enlace e ícono del celular |
 | `propuestas-logo/` | Tres propuestas de logo (versión clara y oscura) y `comparacion.png` |
 
 ## Teléfonos
@@ -48,10 +49,13 @@ Por cada caso: municipio, situación (ej. "8 meses de atraso con Infonavit"), qu
 - **Pixel de Meta**: en el Administrador de eventos de Meta, crea un píxel y pega su número en `metaPixel`.
 - Cada clic en WhatsApp o en llamar se cuenta automáticamente como "contacto".
 
-### 5. Dominio y publicación
-1. Compra el dominio (por ejemplo, en Namecheap, GoDaddy o Akky para un `.mx`).
-2. Publica el repositorio en Netlify o Cloudflare Pages (gratis) y conecta el dominio.
-3. Cuando lo tengas, avísanos para poner la URL completa en `og:image` y `canonical`, y agregar `sitemap.xml`.
+### 5. Publicar en Cloudflare Pages (cimapropiedades.com)
+1. En el panel de Cloudflare entra a **Workers y Pages → Crear → Pages → Conectar a Git** y elige el repositorio `cimapropiedadez`.
+2. Rama de producción: la rama donde esté el sitio (`main`, o esta rama si todavía no se ha fusionado).
+3. Configuración de compilación: **Framework: Ninguno**, comando de compilación **vacío**, directorio de salida **`/`**.
+4. Al terminar, en el proyecto ve a **Dominios personalizados → Configurar dominio** y escribe `cimapropiedades.com`. Repite con `www.cimapropiedades.com`. Como el dominio ya está en Cloudflare, el DNS se configura solo.
+5. Cada vez que se suba un cambio al repositorio, Cloudflare publica la nueva versión en uno o dos minutos.
+6. Ya publicado, entra a search.google.com/search-console, agrega `cimapropiedades.com` y envía el mapa del sitio: `https://cimapropiedades.com/sitemap.xml`.
 
 ### 6. Aviso de privacidad
 Pon `razonSocial`, `rfc` y `domicilio` en `datos.js`: aparecen solos en el pie de página y en el aviso.

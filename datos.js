@@ -67,7 +67,7 @@ window.CIMA = {
   /* ---------- Referidos ---------- */
   // Si das una comisión por recomendar, descríbela aquí. Si no, déjalo vacío.
   // Ej. "Si la venta se concreta, te damos una comisión por recomendarnos."
-  comisionReferidos: "",
+  comisionReferidos: "Si tu recomendación termina en una venta, te damos una comisión. El monto depende de cada caso y te lo decimos antes de empezar.",
 
   /* ---------- Casas en venta ---------- */
   // Ejemplo:
