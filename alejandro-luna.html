@@ -78,8 +78,16 @@
         <li>Casas con adeudo</li>
         <li>Compra y venta</li>
       </ul>
+      <div class="intencion">
+        <span id="t-intencion">¿En qué te ayudo hoy?</span>
+        <div class="selector" role="group" aria-labelledby="t-intencion" id="a-intencion">
+          <button type="button" aria-pressed="true" data-msg="quiero que compren mi casa.">Que compren mi casa</button>
+          <button type="button" aria-pressed="false" data-msg="quiero vender mi casa y saber cuánto vale.">Vender</button>
+          <button type="button" aria-pressed="false" data-msg="estoy buscando comprar una casa.">Comprar</button>
+        </div>
+      </div>
       <div class="acciones">
-        <a class="boton boton-ambar" data-a="wa" href="https://wa.me/528140079355?text=Hola%20Alejandro%2C%20vi%20tu%20perfil%20en%20Cima%20Propiedades%20y%20quiero%20informaci%C3%B3n." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg> Escríbeme por WhatsApp</a>
+        <a class="boton boton-ambar" id="a-wa-principal" data-a="wa" href="https://wa.me/528140079355?text=Hola%20Alejandro%2C%20vi%20tu%20perfil%20en%20Cima%20Propiedades%20y%20quiero%20informaci%C3%B3n." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg> <span class="txt">Escríbeme por WhatsApp</span></a>
         <a class="boton boton-fantasma" data-a="tel" href="tel:+528140079355"><svg><use href="#i-tel"/></svg> Llamar</a>
         <a class="boton boton-fantasma" id="a-vcard" href="#" download="Alejandro-Luna.vcf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg> Guardar contacto</a>
       </div>
@@ -126,6 +134,35 @@
         <p>Te ayudo a encontrar una casa según tu zona y presupuesto, con Infonavit, Fovissste, banco o contado, y reviso escrituras y adeudos antes de que firmes.</p>
         <a href="https://wa.me/528140079355?text=Hola%20Alejandro%2C%20vi%20tu%20perfil%20en%20Cima%20Propiedades%20y%20quiero%20informaci%C3%B3n." target="_blank" rel="noopener" data-a-msg="Hola Alejandro, estoy buscando comprar una casa.">Empezar mi búsqueda →</a>
       </article>
+    </div>
+  </div>
+</section>
+
+<section class="agenda" id="agenda" aria-labelledby="t-agenda">
+  <div class="envoltura agenda-grid">
+    <div>
+      <p class="ceja">Agenda una llamada</p>
+      <h2 class="titulo-seccion" id="t-agenda">¿Prefieres que te llame?</h2>
+      <p class="intro">Elige el día y el horario que te acomode. Se abre WhatsApp con tu propuesta y Alejandro te confirma.</p>
+      <p class="nota-agenda">La llamada no tiene costo ni compromiso.</p>
+    </div>
+    <div class="agenda-caja">
+      <div><h3 id="ag-t-motivo">Motivo</h3><div class="opciones" id="ag-motivo" role="group" aria-labelledby="ag-t-motivo">
+        <button type="button" aria-pressed="false" data-v="que compren mi casa">Que compren mi casa</button>
+        <button type="button" aria-pressed="false" data-v="vender mi casa">Vender mi casa</button>
+        <button type="button" aria-pressed="false" data-v="comprar una casa">Comprar una casa</button>
+        <button type="button" aria-pressed="false" data-v="una duda">Tengo una duda</button>
+      </div></div>
+      <div><h3 id="ag-t-dia">Día</h3><div class="opciones dias" id="ag-dia" role="group" aria-labelledby="ag-t-dia"></div></div>
+      <div><h3 id="ag-t-hora">Horario</h3><div class="opciones" id="ag-hora" role="group" aria-labelledby="ag-t-hora">
+        <button type="button" aria-pressed="false" data-v="en la mañana (9 a 12)">Mañana<small>9:00 a 12:00</small></button>
+        <button type="button" aria-pressed="false" data-v="al mediodía (12 a 3)">Mediodía<small>12:00 a 15:00</small></button>
+        <button type="button" aria-pressed="false" data-v="en la tarde (3 a 7)">Tarde<small>15:00 a 19:00</small></button>
+      </div></div>
+      <div class="agenda-resumen">
+        <p id="ag-resumen">Elige motivo, día y horario.</p>
+        <a class="boton boton-ambar" id="ag-enviar" href="#" target="_blank" rel="noopener" aria-disabled="true"><svg><use href="#i-wa"/></svg> Proponer llamada</a>
+      </div>
     </div>
   </div>
 </section>
@@ -222,9 +259,12 @@
 <section class="compartir" aria-labelledby="t-compartir" style="padding:clamp(2.5rem,5vw,3.5rem) 0">
   <div class="envoltura">
     <h2 id="t-compartir">¿Conoces a alguien que necesite vender o comprar?</h2>
+    <div class="lado">
+    <div class="qr" id="a-qr" hidden><div id="a-qr-codigo"></div><span>Escanea para abrir este perfil</span></div>
     <div class="acciones">
       <a class="boton boton-oscuro" id="a-compartir" href="https://wa.me/" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg> Compartir mi perfil</a>
       <button class="boton boton-linea" id="a-copiar" type="button">Copiar enlace</button>
+    </div>
     </div>
   </div>
 </section>
@@ -240,6 +280,7 @@
 </footer>
 
 <a class="flotante" href="https://wa.me/528140079355?text=Hola%2C%20tengo%20una%20casa%20con%20adeudo%20de%20Infonavit%20y%20quiero%20saber%20si%20me%20la%20pueden%20comprar." target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp"><svg><use href="#i-wa"/></svg></a>
+<script src="/js/qrcode.js" defer></script>
 <script src="/datos.js"></script>
 <script src="/sitio.js"></script>
 </body>

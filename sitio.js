@@ -88,6 +88,12 @@
         ${p.perfil ? `<span class="ver-perfil">Ver perfil →</span>` : ""}`;
       return p.perfil ? `<a class="persona" href="${esc(p.perfil)}">${dentro}</a>` : `<div class="persona">${dentro}</div>`;
     }).join("");
+    $("#equipo-grid").querySelectorAll("img").forEach((img) => img.addEventListener("error", () => {
+      const span = document.createElement("span");
+      span.className = "sin-foto"; span.setAttribute("aria-hidden", "true");
+      span.textContent = iniciales(img.alt);
+      img.replaceWith(span);
+    }));
     $("#equipo").hidden = false;
   }
 
@@ -174,6 +180,92 @@
           <p>“${esc(t.texto)}”</p><footer><b>${esc(t.nombre)}</b>${t.municipio ? " · " + esc(t.municipio) : ""}</footer></blockquote>`).join("");
       $("#a-testimonios-sec").hidden = false;
     }
+    // selector de intención en el héroe
+    const principal = $("#a-wa-principal");
+    const botonesInt = document.querySelectorAll("#a-intencion button");
+    let intencion = botonesInt[0] ? botonesInt[0].dataset.msg : "";
+    const pintarPrincipal = () => { if (principal) principal.href = waA("Hola " + nombreCorto + ", vi tu perfil en Cima Propiedades y " + intencion); };
+    botonesInt.forEach((b) => b.addEventListener("click", () => {
+      botonesInt.forEach((x) => x.setAttribute("aria-pressed", x === b));
+      intencion = b.dataset.msg;
+      pintarPrincipal();
+      const t = principal && principal.querySelector(".txt");
+      if (t) { t.style.opacity = 0; setTimeout(() => (t.style.opacity = 1), 160); }
+    }));
+    pintarPrincipal();
+
+    // retrato con inclinación sutil
+    const marco = document.querySelector(".retrato .marco");
+    if (marco && matchMedia("(hover: hover)").matches && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      const r = marco.parentElement;
+      r.addEventListener("pointermove", (e) => {
+        const b = r.getBoundingClientRect();
+        const x = (e.clientX - b.left) / b.width - 0.5, y = (e.clientY - b.top) / b.height - 0.5;
+        marco.style.transform = `rotateY(${x * 8}deg) rotateX(${-y * 8}deg)`;
+      });
+      r.addEventListener("pointerleave", () => (marco.style.transform = ""));
+    }
+
+    // barra fija con el asesor (escritorio)
+    const iniciales = (A.nombre || "").split(/\s+/).map((x) => x[0] || "").join("").slice(0, 2).toUpperCase();
+    const pastilla = document.createElement("div");
+    pastilla.className = "pastilla";
+    pastilla.setAttribute("role", "complementary");
+    pastilla.setAttribute("aria-label", "Contactar a " + A.nombre);
+    pastilla.innerHTML = `<span class="avatar">${esc(iniciales)}${A.foto ? `<img src="${esc(A.foto)}" alt="" onerror="this.remove()">` : ""}</span>
+      <div><b>${esc(A.nombre)}</b><small>${esc(A.puesto || "Asesor inmobiliario")} · Cima Propiedades</small></div>
+      <a class="boton boton-wa" href="${waA(saludo)}" target="_blank" rel="noopener">${ICONO_WA} WhatsApp</a>
+      <a class="boton boton-tel" href="tel:+${telA}" aria-label="Llamar a ${esc(A.nombre)}"><svg><use href="#i-tel"/></svg></a>`;
+    document.body.appendChild(pastilla);
+    const heroe = $(".perfil-heroe"), contacto = $("#contacto");
+    const alBajarP = () => {
+      const pasoHeroe = heroe.getBoundingClientRect().bottom < 80;
+      const enContacto = contacto && contacto.getBoundingClientRect().top < innerHeight * 0.6 && contacto.getBoundingClientRect().bottom > 0;
+      pastilla.classList.toggle("visible", pasoHeroe && !enContacto);
+    };
+    addEventListener("scroll", alBajarP, { passive: true });
+    alBajarP();
+
+    // agenda una llamada
+    const diasBox = $("#ag-dia");
+    if (diasBox) {
+      const nombres = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+      const meses = ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"];
+      const hoy = new Date();
+      const dias = [];
+      for (let i = 0; dias.length < 6 && i < 10; i++) {
+        const d = new Date(hoy); d.setDate(hoy.getDate() + i);
+        if (d.getDay() === 0) continue; // sin domingos
+        const etiqueta = i === 0 ? "Hoy" : i === 1 ? "Mañana" : nombres[d.getDay()];
+        const valor = (i === 0 ? "hoy " : i === 1 ? "mañana " : "el ") + nombres[d.getDay()].toLowerCase() + " " + d.getDate() + " de " + meses[d.getMonth()];
+        dias.push(`<button type="button" aria-pressed="false" data-v="${valor}">${etiqueta}<small>${d.getDate()} ${meses[d.getMonth()]}</small></button>`);
+      }
+      diasBox.innerHTML = dias.join("");
+      const elegido = { motivo: "", dia: "", hora: "" };
+      const enviar = $("#ag-enviar"), resumen = $("#ag-resumen");
+      const actualizarAg = () => {
+        const listo = elegido.motivo && elegido.dia && elegido.hora;
+        if (!listo) {
+          const falta = [!elegido.motivo && "motivo", !elegido.dia && "día", !elegido.hora && "horario"].filter(Boolean);
+          resumen.textContent = "Elige " + falta.join(", ").replace(/, ([^,]*)$/, " y $1") + ".";
+          enviar.setAttribute("aria-disabled", "true");
+          return;
+        }
+        resumen.innerHTML = `Te llamamos <b>${esc(elegido.dia)}</b>, <b>${esc(elegido.hora)}</b>, sobre <b>${esc(elegido.motivo)}</b>.`;
+        enviar.removeAttribute("aria-disabled");
+        enviar.href = waA("Hola " + nombreCorto + ", vi tu perfil en Cima Propiedades. ¿Me puedes llamar " + elegido.dia + " " + elegido.hora + "? Es sobre " + elegido.motivo + ".");
+      };
+      [["#ag-motivo", "motivo"], ["#ag-dia", "dia"], ["#ag-hora", "hora"]].forEach(([id, k]) => {
+        $(id).addEventListener("click", (e) => {
+          const b = e.target.closest("button"); if (!b) return;
+          $(id).querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", x === b));
+          elegido[k] = b.dataset.v;
+          actualizarAg();
+        });
+      });
+      actualizarAg();
+    }
+
     // guardar contacto (vCard)
     const url = location.protocol.startsWith("http") ? location.href.split("#")[0] : "https://cimapropiedades.com/" + clave;
     const partes = (A.nombre || "").split(" ");
@@ -181,6 +273,18 @@
       "ORG:Cima Propiedades", "TITLE:" + (A.puesto || "Asesor inmobiliario"), "TEL;TYPE=CELL,VOICE:+" + telA,
       A.correo ? "EMAIL:" + A.correo : "", "URL:" + url, "ADR;TYPE=WORK:;;;Monterrey;Nuevo León;;México", "END:VCARD"].filter(Boolean).join("\r\n");
     $("#a-vcard").href = "data:text/vcard;charset=utf-8," + encodeURIComponent(vcf);
+    // código QR para compartir en persona
+    const pintarQR = () => {
+      if (!window.qrcode || !$("#a-qr-codigo")) return false;
+      const q = qrcode(0, "M");
+      q.addData(url.startsWith("http") && !url.includes("localhost") ? url : "https://cimapropiedades.com/" + clave);
+      q.make();
+      $("#a-qr-codigo").innerHTML = q.createSvgTag({ cellSize: 3, margin: 2, scalable: true });
+      $("#a-qr").hidden = false;
+      return true;
+    };
+    if (!pintarQR()) addEventListener("load", pintarQR, { once: true });
+
     // compartir y copiar enlace
     $("#a-compartir").href = "https://wa.me/?text=" + encodeURIComponent("Te paso el contacto de " + A.nombre + ", asesor de Cima Propiedades en Monterrey: " + url);
     $("#a-copiar").addEventListener("click", async () => {
@@ -267,7 +371,7 @@
   const alBajar = () => {
     const y = scrollY;
     if (nav && !nav.classList.contains("solida")) nav.classList.toggle("con-fondo", y > 40);
-    barra.classList.toggle("visible", y > 320 || !!document.querySelector(".nav.solida"));
+    barra.classList.toggle("visible", y > 320);
   };
   addEventListener("scroll", alBajar, { passive: true });
   alBajar();
@@ -308,7 +412,7 @@
 
   // Aparición al hacer scroll
   if (reducir || !("IntersectionObserver" in window)) return;
-  const sel = ".ayuda-grid article,.testimonio,.ficha,.titulo-seccion,.ceja,.intro,.garantias,.camino,.paso,.tarjeta,.caso,.persona,.otras-grid a,.lista-zonas,.preguntas details,.texto-largo .cuerpo,.propiedad,.situaciones,.respuesta,.contacto form,.cifra";
+  const sel = ".agenda-caja,.ayuda-grid article,.testimonio,.ficha,.titulo-seccion,.ceja,.intro,.garantias,.camino,.paso,.tarjeta,.caso,.persona,.otras-grid a,.lista-zonas,.preguntas details,.texto-largo .cuerpo,.propiedad,.situaciones,.respuesta,.contacto form,.cifra";
   const io = new IntersectionObserver((entradas) => {
     entradas.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("visible"); io.unobserve(e.target); } });
   }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
