@@ -95,7 +95,11 @@ window.CIMA = {
       // Testimonios reales de sus clientes:
       // { nombre: "María G.", municipio: "Apodaca", texto: "...", estrellas: 5 }
       testimonios: [],
-      redes: { facebook: "", instagram: "", tiktok: "" }
+      redes: {
+        facebook: "https://www.facebook.com/alejandrolunacimabr",
+        instagram: "https://www.instagram.com/alejandroluna.realestate/",
+        tiktok: ""
+      }
     }
   },
 
