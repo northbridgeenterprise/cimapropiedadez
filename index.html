@@ -50,7 +50,7 @@
     <nav aria-label="Principal">
       <ul>
         <li><a href="#compramos">Compramos tu casa</a></li>
-        <li><a href="#servicios">Vender y comprar</a></li>
+        <li><a href="propiedades.html">Casas en venta</a></li>
         <li><a href="#proceso">Cómo funciona</a></li>
         <li><a href="#confianza">Sin fraudes</a></li>
         <li><a href="#preguntas">Preguntas</a></li>
@@ -141,7 +141,7 @@
           <li>Infonavit, Fovissste, banco o contado</li>
           <li>Revisión de escrituras y adeudos</li>
         </ul>
-        <a href="#contacto" data-necesidad="Comprar una casa">Quiero comprar</a>
+        <a href="propiedades.html">Ver casas en venta</a>
       </article>
     </div>
   </div>
@@ -214,6 +214,14 @@
   </div>
 </section>
 
+<section class="casos" id="casos" aria-labelledby="t-casos" hidden>
+  <div class="envoltura">
+    <h2 class="titulo-seccion" id="t-casos">Casas que ya compramos.</h2>
+    <p class="intro">Casos reales de familias en el área metropolitana. Cambiamos los nombres por privacidad.</p>
+    <div class="casos-grid" id="casos-grid"></div>
+  </div>
+</section>
+
 <section class="confianza" id="confianza" aria-labelledby="t-confianza">
   <div class="envoltura">
     <h2 class="titulo-seccion" id="t-confianza">Cómo saber que tratas con alguien serio.</h2>
@@ -240,6 +248,11 @@
         </ul>
       </div>
     </div>
+    <div class="cifras" id="cifras" hidden></div>
+    <div class="extra-confianza" id="extra-confianza" hidden>
+      <a class="boton boton-oscuro" id="boton-resenas" href="#" target="_blank" rel="noopener" hidden><svg viewBox="0 0 24 24"><path fill="currentColor" d="m12 2 2.9 6.6 7.1.6-5.4 4.7 1.6 7L12 17.3 5.8 21l1.6-7L2 9.2l7.1-.6Z"/></svg> Lee nuestras reseñas en Google</a>
+      <p class="notarias" id="notarias" hidden></p>
+    </div>
     <p class="pie-nota">Antes de firmar con cualquier persona, pide la oferta por escrito y el nombre de la notaría, y llama tú mismo a la notaría para confirmar la cita.</p>
   </div>
 </section>
@@ -251,6 +264,28 @@
       <li>Monterrey</li><li>Guadalupe</li><li>Apodaca</li><li>San Nicolás</li><li>Escobedo</li><li>Santa Catarina</li><li>San Pedro</li><li>Juárez</li><li>García</li><li>Pesquería</li><li>Santiago</li><li>Cadereyta</li>
     </ul>
     <p class="nota">¿Tu casa está en otro municipio de Nuevo León? Escríbenos de todos modos.</p>
+  </div>
+</section>
+
+<section class="equipo" id="equipo" aria-labelledby="t-equipo" hidden>
+  <div class="envoltura">
+    <h2 class="titulo-seccion" id="t-equipo">Quién te va a atender.</h2>
+    <p class="intro">Personas reales, en Monterrey, que dan la cara en cada operación.</p>
+    <div class="equipo-grid" id="equipo-grid"></div>
+  </div>
+</section>
+
+<section class="referidos" aria-labelledby="t-referidos">
+  <div class="envoltura referidos-grid">
+    <div>
+      <h2 class="titulo-seccion" id="t-referidos">¿Conoces a alguien que necesite vender su casa?</h2>
+      <p class="intro">Un familiar con adeudo de Infonavit, un vecino con una casa abandonada, una herencia que nadie ha podido vender. Mándale nuestro contacto o pásanos sus datos y lo buscamos con cuidado.</p>
+      <p class="intro" id="referidos-comision" hidden></p>
+    </div>
+    <div class="acciones">
+      <a class="boton boton-oscuro" id="compartir-referido" href="https://wa.me/" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg> Compartir por WhatsApp</a>
+      <a class="boton boton-linea" href="https://wa.me/528140079355?text=Hola%2C%20quiero%20recomendarles%20a%20alguien%20que%20necesita%20vender%20su%20casa." target="_blank" rel="noopener">Recomendar a alguien</a>
+    </div>
   </div>
 </section>
 
@@ -342,7 +377,7 @@
   <div class="envoltura">
     <a class="marca" href="#inicio"><svg style="color:var(--ambar)"><use href="#i-cima"/></svg>Cima Propiedades</a>
     <span>Monterrey, Nuevo León</span><a href="tel:+528140079355">81 4007 9355</a><a href="tel:+528121980008">81 2198 0008 (urgencias)</a><a href="aviso-de-privacidad.html">Aviso de privacidad</a>
-    <span>© 2026 Cima Propiedades</span>
+    <span>© 2026 Cima Propiedades</span><span data-cima="legal" hidden></span>
     <nav aria-label="Situaciones"><a href="vender-casa-con-adeudo-infonavit-monterrey.html">Casa con adeudo de Infonavit</a><a href="vender-casa-intestada-herencia-monterrey.html">Casa heredada o intestada</a><a href="vender-casa-con-gravamen-monterrey.html">Casa con gravamen o hipoteca</a><a href="vender-casa-en-mal-estado-monterrey.html">Casa en mal estado o abandonada</a></nav>
   </div>
 </footer>
@@ -372,7 +407,7 @@
       titulo:"Encuentra tu casa con los papeles en orden.",
       bajada:"Te ayudamos a buscar según tu zona y presupuesto, y revisamos escrituras y adeudos antes de que firmes. Con Infonavit, banco o de contado.",
       cta:"Cuéntanos qué buscas", msg:"Hola, estoy buscando comprar una casa.",
-      sec:"Cómo te ayudamos", secHref:"#servicios"
+      sec:"Ver casas en venta", secHref:"propiedades.html"
     }
   };
   const tabs = document.querySelectorAll('.selector button');
@@ -456,5 +491,7 @@
   armar();
 })();
 </script>
+<script src="datos.js"></script>
+<script src="sitio.js"></script>
 </body>
 </html>
